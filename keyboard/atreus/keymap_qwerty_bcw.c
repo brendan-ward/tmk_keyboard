@@ -11,7 +11,7 @@
   KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,   KC_I,    KC_O,       KC_P, \
   KC_A,   KC_S,   KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,   KC_K,    KC_L,       KC_ENT, \
   KC_Z,   KC_X,   KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,   KC_COMM, KC_DOT,     KC_QUOT, \
-  KC_ESC, KC_TAB, KC_LGUI, KC_LSFT, KC_SPC, KC_LCTL,  KC_LALT, KC_BSPC, KC_FN0, KC_LSFT, CTRL(KC_S), KC_SCLN)
+  KC_ESC, KC_TAB, KC_LGUI, KC_LSFT, KC_SPC, KC_LCTL,  KC_LALT, KC_BSPC, KC_FN0, KC_FN3,  CTRL(KC_S),  KC_SCLN)
 
 
 /*
@@ -21,10 +21,10 @@
  *  L2  no  super  shift  space  ctrl || alt  bkspc  fn    L2    no     del
  */
 #define LAYER_1 KEYMAP( \
-  KC_1,           KC_2,           KC_3,     KC_4,      KC_5,                     KC_6,     KC_7,     KC_8,    KC_9,     KC_0, \
-  SHIFT(KC_LBRC), SHIFT(KC_RBRC), KC_LBRC,  KC_RBRC,   KC_EQL,                   KC_HOME,  KC_LEFT,  KC_UP,   KC_RIGHT, KC_END,  \
-  SHIFT(KC_9),    SHIFT(KC_0),    KC_SLASH, KC_BSLASH, KC_MINS,                   KC_NO,    KC_PGUP,  KC_DOWN, KC_PGDN,  KC_GRAVE,  \
-  KC_FN1,         KC_NO,          KC_LGUI,  KC_LSFT,   KC_SPC, KC_LCTL, KC_LALT, KC_BSPC,  KC_FN0,   KC_FN1,  KC_NO,    KC_DEL)
+  KC_1,           KC_2,           KC_3,     KC_4,      KC_5,                     KC_6,     KC_7,     KC_8,     KC_9,      KC_0, \
+  SHIFT(KC_LBRC), SHIFT(KC_RBRC), KC_LBRC,  KC_RBRC,   KC_EQL,                   KC_HOME,  KC_LEFT,  KC_UP,    KC_RIGHT,  KC_END,  \
+  SHIFT(KC_9),    SHIFT(KC_0),    KC_SLASH, KC_BSLASH, KC_MINS,                   KC_NO,   KC_PGUP,  KC_DOWN,  KC_PGDN,   KC_GRAVE,  \
+  KC_FN1,         KC_NO,          KC_LGUI,  KC_LSFT,   KC_SPC, KC_LCTL, KC_LALT, KC_BSPC,  KC_FN0,   KC_FN1,   KC_NO,    KC_DEL)
 
 
 /*
@@ -36,17 +36,22 @@
 #define LAYER_2 KEYMAP( \
   KC_F2,  KC_F3,      KC_F4,      KC_F5,      KC_F6,                    KC_F7,      KC_F8,  KC_F9, KC_F10, KC_F11,   \
   KC_F1,  KC_PAUSE,   KC_VOLD,    KC_VOLU,    KC_NO,                    KC_PSCREEN, KC_NO,  KC_NO, KC_NO, KC_F12,   \
-  KC_NO,  CTRL(KC_X), CTRL(KC_C), CTRL(KC_V), KC_FN3,                   KC_NO,      KC_NO,  KC_NO, KC_NO, KC_NO,   \
+  KC_NO,  CTRL(KC_X), CTRL(KC_C), CTRL(KC_V), KC_FN4,                   KC_NO,      KC_NO,  KC_NO, KC_NO, KC_NO,   \
   KC_FN2, KC_NO,      KC_LGUI,    KC_LSFT,    KC_NO, KC_LCTL,  KC_LALT, KC_NO,      KC_FN2, KC_NO, KC_NO, KC_NO)
 
 
 
-
+/*
+ * no  no  no     no     no       ||      no  no  no  no  no
+ * no  no  no     no     no       ||      no  no  no  no  no
+ * no  no  no     no     no       ||      no  no  no  no  no
+ * no  no  super  shift  no  ctrl || alt  no  no  no  no  no
+ */
 #define LAYER_3 KEYMAP( \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,   KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO)
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_VOLD,  KC_VOLU,   KC_NO, KC_NO, KC_PSCREEN,   \
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO,   \
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO,   \
+  KC_NO,  KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO)
 
 
 /* blank layer */
@@ -59,10 +64,10 @@
 
 /*
 #define LAYER_N KEYMAP( \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,   KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO)
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   \
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   \
+  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   \
+  KC_NO,  KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO)
 */
 
 
@@ -82,8 +87,8 @@ const uint16_t PROGMEM fn_actions[] = {
   [0] = ACTION_LAYER_MOMENTARY(1),  // to Fn overlay
   [1] = ACTION_LAYER_ON(2, 1),  // switch to layer 2
   [2] = ACTION_LAYER_OFF(2, 1),  // switch back to layer 0
-  [3] = ACTION_FUNCTION(BOOTLOADER),  // RESET to bootloader
-  [4] = ACTION_LAYER_MOMENTARY(3)
+  [3] = ACTION_LAYER_MOMENTARY(3),  // to layer 3 overlay
+  [4] = ACTION_FUNCTION(BOOTLOADER)  // RESET to bootloader
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
