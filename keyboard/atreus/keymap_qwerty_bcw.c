@@ -1,11 +1,13 @@
 #include "keymap_common.h"
 
 
+/* https://github.com/tmk/tmk_core/blob/master/doc/keycode.txt */
+
 /*
  *  Q    W    E     R     T        ||       Y     U     I       O      P
  *  A    S    D     F     G        ||       H     J     K       L      enter
  *  Z    X    C     V     B        ||       N     M     ,       .      '  
- * esc  tab super shift space ctrl || alt bkspc   fn    shift   SAVE   ;
+ * esc  tab super shift space ctrl || alt bkspc   fn    L3      SAVE   ;
  */
 #define LAYER_0 KEYMAP( \
   KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,   KC_I,    KC_O,       KC_P, \
@@ -42,16 +44,16 @@
 
 
 /*
- * no  no  no     no     no       ||      no  no  no  no  no
- * no  no  no     no     no       ||      no  no  no  no  no
- * no  no  no     no     no       ||      no  no  no  no  no
- * no  no  super  shift  no  ctrl || alt  no  no  no  no  no
+ * no  no  no     no     no       ||      no  7   8   9   no
+ * no  no  no     no     no       ||      no  4   5   6   enter
+ * no  no  no     no     no       ||      0   1   2   3   .
+ * no  no  super  shift  no  ctrl || alt  no  no  L3  no  /
  */
 #define LAYER_3 KEYMAP( \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_VOLD,  KC_VOLU,   KC_NO, KC_NO, KC_PSCREEN,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO,   \
-  KC_NO,  KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO,      KC_NO, KC_NO, KC_NO)
+  KC_PSCREEN,  KC_NO,  KC_NO,    KC_VOLD,  KC_VOLU,                  KC_NO,  KC_7,  KC_8,   KC_9,  KC_NO,   \
+  KC_INSERT,   KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_4,  KC_5,   KC_6,  KC_ENT,   \
+  KC_NO,       KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_0,   KC_1,  KC_2,   KC_3,  KC_DOT,   \
+  KC_NO,       KC_NO,  KC_LGUI,  KC_LSFT,  KC_NO, KC_LCTL,  KC_LALT, KC_NO,  KC_NO, KC_FN3, KC_NO, KC_SLASH)
 
 
 /* blank layer */
@@ -61,7 +63,6 @@
  * no  no  no     no     no       ||      no  no  no  no  no
  * no  no  super  shift  no  ctrl || alt  no  no  no  no  no
  */
-
 /*
 #define LAYER_N KEYMAP( \
   KC_NO,  KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   \
