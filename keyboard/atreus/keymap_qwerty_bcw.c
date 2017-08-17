@@ -4,15 +4,15 @@
 /* https://github.com/tmk/tmk_core/blob/master/doc/keycode.txt */
 
 /*
- *  Q        W    E     R     T            ||        Y       U     I       O      P
- *  A        S    D     F     G            ||        H       J     K       L      enter
- *  Z(shft)  X    C     V     B            ||        N       M     ,       .      '
- * esc       tab bksp shift space  ctrl    || gui    bkspc   fn    L3      SAVE   ;
+ *  Q   W    E     R     T            ||        Y       U     I       O      P
+ *  A   S    D     F     G            ||        H       J     K       L      enter
+ *  Z   X    C     V     B            ||        N       M     ,       .      '
+ * esc  tab bksp shift space  ctrl    || gui    bkspc   fn    L3      SAVE   ;
  */
 #define LAYER_0 KEYMAP( \
   KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,   KC_I,    KC_O,       KC_P, \
   KC_A,   KC_S,   KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,   KC_K,    KC_L,       KC_ENT, \
-  KC_FN5, KC_X,   KC_C,    KC_V,    KC_B,                        KC_N,    KC_M,   KC_COMM, KC_DOT,     KC_QUOT, \
+  KC_Z, KC_X,   KC_C,    KC_V,    KC_B,                        KC_N,    KC_M,   KC_COMM, KC_DOT,     KC_QUOT, \
   KC_ESC, KC_TAB, KC_LALT, KC_LSFT, KC_SPC, KC_LGUI,    KC_LCTL, KC_BSPC, KC_FN0, KC_FN3,  GUI(KC_S),  KC_SCLN)
 
 
@@ -50,10 +50,10 @@
  * no  no  super  shift  no  ctrl || alt  comment  no  L3  run  /
  */
 #define LAYER_3 KEYMAP( \
-  KC_FN6,  KC_NO,  KC_NO,    KC_VOLD,  KC_VOLU,                  KC_NO,           KC_7,  KC_8,   KC_9,                KC_NO,   \
-  KC_INSERT,   KC_NO,  KC_NO,    KC_NO,    KC_FN6,                    KC_NO,           KC_4,  KC_5,   KC_6,                KC_ENT,   \
+  KC_FN5,  KC_NO,  KC_NO,    KC_VOLD,  KC_VOLU,                  KC_NO,           KC_7,  KC_8,   KC_9,                KC_NO,   \
+  KC_INSERT,   KC_NO,  KC_NO,    KC_NO,    KC_FN5,                    KC_NO,           KC_4,  KC_5,   KC_6,                KC_ENT,   \
   KC_NO,       KC_NO,  KC_NO,    KC_NO,    KC_NO,                    KC_0,            KC_1,  KC_2,   KC_3,                KC_DOT,   \
-  KC_NO,       KC_NO,  KC_NO,  KC_LSFT,  KC_NO, KC_LGUI,  KC_LCTL,   GUI(KC_SLASH),  KC_NO, KC_FN3, KC_FN6, KC_SLASH)
+  KC_NO,       KC_NO,  KC_NO,  KC_LSFT,  KC_NO, KC_LGUI,  KC_LCTL,   GUI(KC_SLASH),  KC_NO, KC_FN3, KC_FN5, KC_SLASH)
 
 
 /* blank layer */
@@ -90,8 +90,7 @@ const uint16_t PROGMEM fn_actions[] = {
   [2] = ACTION_LAYER_OFF(2, 1),  // switch back to layer 0
   [3] = ACTION_LAYER_MOMENTARY(3),  // to layer 3 overlay
   [4] = ACTION_FUNCTION(BOOTLOADER),  // RESET to bootloader
-  [5] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_Z),  // Holding Z is SHIFT
-  [6] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT | MOD_LCTL, KC_4)  // Mac Print Screen equivalent
+  [5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT | MOD_LCTL, KC_4)  // Mac Print Screen equivalent
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
